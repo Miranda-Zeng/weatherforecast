@@ -1,85 +1,20 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>moonlight</title>
-
-        <style>
-            body {
-              margin: 0;
-              height: 100vh;
-              overflow: hidden;
-              background: rgb(233, 238, 187);
-              /* background-image: url("bkgmoon.jpg");
-              background-size: cover;
-              background-position: center; */
-              /* background-repeat: no-repeat; */
-              cursor: none;
-            }
-    
-        
-            .darkness {
-              position: fixed;
-              inset: 0;
-              pointer-events: none;
-        
-              background: black;
-        
-              mask-image: radial-gradient(
-                circle 120px at var(--x) var(--y),
-                transparent 0%,
-                transparent 70%,
-                black 100%
-              );
-        
-              -webkit-mask-image: radial-gradient(
-                circle 120px at var(--x) var(--y),
-                transparent 0%,
-                transparent 70%,
-                black 100%
-              );
-            }
-
-            .light {
-              position: fixed;
-              inset: 0;
-              pointer-events: none;
-
-              background: radial-gradient(
-                circle 140px at var(--x) var(--y),
-                rgba(255, 245, 190, 0.65) 0%,
-                rgba(255, 245, 190, 0.25) 45%,
-                rgba(255, 245, 190, 0) 100%
-              );
-
-              mix-blend-mode: screen;
-            }
-          
-          </style>
-        </head>
-        
-        <body>
-        
-          <div class="darkness"></div>
-          <!-- <div class="light"></div> -->
-        
-          <script>
-            const darkness = document.querySelector(".darkness");
-            // const light = document.querySelector(".light");
-
-            document.addEventListener("mousemove", function(event) {
-              const x = event.clientX + "px";
-              const y = event.clientY + "px";
-
-              darkness.style.setProperty("--x", x);
-              darkness.style.setProperty("--y", y);
-
-              // light.style.setProperty("--x", x);
-              // light.style.setProperty("--y", y);
-            });
-          </script>
-
-    </body>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="canva">
+    <input type="text" id="locale" placeholder="pick a place">
+    <button onclick="visualize()">check weather</button>
+    <button onclick="stop()">stop</button>
+    <p id = "info">
+      Search for a location to see it's temperature.
+    </p>
+  </div>
+  <div id="weatherEmojis"></div>
+  <audio id="musik" src="musik.mp3" loop></audio>
+</body>
+<script src="script.js"></script>
 </html>
+
