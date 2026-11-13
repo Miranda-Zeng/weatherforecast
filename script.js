@@ -1,8 +1,7 @@
 let bkgMusic = document.getElementById("musik");
-bkgMusic.volume = 0.15;
+bkgMusic.volume = 0.3;
 document.addEventListener("click",function(){
-  bkgMusic.play();
-  
+  bkgMusic.play(); 
 },{once:true});
 
 async function visualize() { 
@@ -15,8 +14,14 @@ async function visualize() {
     }
     const result = await response.json();
     // console.log(result.days[0].icon);
-    info.innerHTML = "the weather in " + locale.value + " is " + result.days[0].icon + ", " + result.days[0].temp + "°F"
-    speakWeather(locale.value,result.days[0].temp, result.days[0].icon);
+    // info.innerHTML = "the weather in " + locale.value + " is " + result.days[0].icon + ", " + result.days[0].temp + "°F"
+    document.getElementById("subtitle").textContent = "THE WEATHER IN";
+    document.getElementById("city").textContent = locale.value;
+    document.getElementById("temperature").textContent = result.days[0].temp + "°F";
+    document.getElementById("conditions").textContent = result.days[0].conditions;
+    document.getElementById("date").textContent = result.days[0].datetime;
+
+    speakWeather(locale.value,result.days[0].temp, result.days[0].conditions);
     let weather = result.days[0].icon;
     let emoji = "";
     if (weather === "snow"){
@@ -52,7 +57,7 @@ async function visualize() {
     console.log(weatherEmojis);  
 
     if (result.days[0].temp < 60) {
-      document.body.style.backgroundColor = "#87BFFF"
+      document.body.style.backgroundColor = "#C6D8D4"
     }
     else {
       document.body.style.backgroundColor = "#F9C784"
@@ -75,6 +80,11 @@ function stop(){
   locale.value ="";
   weatherEmojis.innerHTML = "";
   speechSynthesis.cancel();
+  bkgMusic.pause(); 
+  document.getElementById("subtitle").textContent = "";
+  document.getElementById("city").textContent = "";
+  document.getElementById("temperature").textContent = "";
+  document.getElementById("conditions").textContent ="";
 }
 
 

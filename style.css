@@ -1,16 +1,63 @@
 body{
   color:whitesmoke;
   font-family: "Helvetica";
-  background: salmon;
+  background: #EAA58F;
   font-size:12px;
 }
 
 #canva{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   
 }
+
+#info{
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+#input{
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#output{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 120px;
+  gap: 45px;
+}
+
+#output h1,h2,p{
+  margin: 0;
+}
+
+#conditions{
+  font-size: 20px;
+  color: #304C68;
+}
+
+#subtitle{
+  color: #304C68;
+  font-size: 20px;
+}
+
+#city{
+  font-size: 48px;
+  color:#304C68;
+}
+
+#temperature{
+  font-size: 40px;
+  color: #C96A46;
+}
+
 
 button {
   background:dodgerblue;
@@ -51,3 +98,4 @@ input {
     transform: translateY(110vh);
   }
 }
+

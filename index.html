@@ -5,12 +5,19 @@
 </head>
 <body>
   <div id="canva">
-    <input type="text" id="locale" placeholder="pick a place">
-    <button onclick="visualize()">check weather</button>
-    <button onclick="stop()">stop</button>
-    <p id = "info">
-      Search for a location to see it's temperature.
-    </p>
+      <div id="input">
+      <input type="text" id="locale" placeholder="pick a place">
+      <button onclick="visualize()">check weather</button>
+      <button onclick="stop()">stop</button>
+      <p id = "info">Search for a location to see it's temperature. </p>
+     </div>
+    <div id="output">
+      <p id="subtitle"></p>
+      <h1 id="city"></h1>
+      <h2 id="temperature"></h2>
+      <p id="conditions"></p>
+      <p id="date"></p>
+    </div>
   </div>
   <div id="weatherEmojis"></div>
   <audio id="musik" src="musik.mp3" loop></audio>
