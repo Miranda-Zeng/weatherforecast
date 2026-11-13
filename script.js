@@ -85,6 +85,7 @@ function stop(){
   document.getElementById("city").textContent = "";
   document.getElementById("temperature").textContent = "";
   document.getElementById("conditions").textContent ="";
+  document.getElementById("date").textContent =""
 }
 
 
